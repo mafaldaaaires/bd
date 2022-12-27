@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ style.Styles}} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Style info</h2>
+  <p>
+    <b>IdArtist: </b>{{ style.IdArtist }}
+  </p>
+  <p>
+    <b>Styles: </b>{{ style.Styles }}
+  </p>
+  <b>Songs: </b><ul>
+    {% for song in songs %}      
+      <li><a href="/songs/{{ song.IdSong }}">{{ song.Title}}</a></li>
+    {% endfor %}
+    </ul>
+  </p>
+{% endblock %}
